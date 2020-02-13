@@ -14,5 +14,12 @@ router.post('/', function(req, res){
     userModel.create(newUser);
     res.send('ok');
 });
+router.get('/:index', function(req, res){
+    res.send(userModel.show(req.params.index));
+});
+router.delete('/:index', function(req, res){
+    userModel.delete(rq.params.index);
+    res.send('okey dokey');
+});
 
 module.exports = router;

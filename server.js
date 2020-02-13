@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 app.use(express.jason());
+app.set('view engine', 'hbs');
 
 const userController = require('./controllers/userController.js');
 app.use('/user', router);

@@ -6,13 +6,21 @@ function userIndex () {
     return users;
 }
 
+function showUser(index) {
+    return users[index];
+}
+
 function createUser(newUser) {
-    users.push(newUser);
-    
+    users.push(newUser);   
+}
+
+function deleteUser(index) {
+    user.splice(index, 1);
 }
 
 module.exports = {
     index: userIndex,
-    new: userNew,
-    create: createUser
+    user: showUser,
+    create: createUser,
+    delete: deleteUser
 };
