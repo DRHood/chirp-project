@@ -1,9 +1,12 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+app.use(express.jason());
 
-app.get('/', (req, res) => {
-  res.send('hello world!')
-})
+const userController = require('./controllers/userController.js');
+app.use('/user', router);
+
+const router = require('./routes/index.js');
+app.use('/', router);
 
 // process.env.PORT is necessary for deployment to Heroku
 // If environment variable is not provided, default to 3000
