@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
-app.use(express.jason());
+app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'hbs');
 
 const userController = require('./controllers/userController.js');
-app.use('/user', router);
+app.use('/user', userController);
 
-const router = require('./routes/index.js');
-app.use('/', router);
-
+app.get('/', (req, res) => {
+  res.render('index');
+});
 // process.env.PORT is necessary for deployment to Heroku
 // If environment variable is not provided, default to 3000
 const PORT = process.env.PORT || 3000

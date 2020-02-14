@@ -8,10 +8,11 @@
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jamie King <jamie@jamieking.coffee> (http://jamieking.coffee)",
+  "author": "DRH",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "hbs": "^4.1.0"
+    "hbs": "^4.1.0",
+    "mongoose": "^5.9.0"
   }
 }

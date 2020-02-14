@@ -1,26 +1,18 @@
-// Keep track of users here (no database)
-const users = [];
 
-function userIndex () {
-    // return page of user info to client
-    return users;
-}
+const mongoose = require('../db/connection');
+const Schema = mongoose.Schema;
 
-function showUser(index) {
-    return users[index];
-}
+const User = new Schema({
+    name: String,
+    email: String,
+    chirps: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Chirp"
+        }
+    ]
+});
 
-function createUser(newUser) {
-    users.push(newUser);   
-}
 
-function deleteUser(index) {
-    user.splice(index, 1);
-}
 
-module.exports = {
-    index: userIndex,
-    user: showUser,
-    create: createUser,
-    delete: deleteUser
-};
+module.exports = mongoose.model("User", User);
